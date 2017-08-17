@@ -9,8 +9,8 @@ $Zpool_Request = Invoke-WebRequest "http://www.zpool.ca/api/status"
 }
 catch {}
 $retries++
-} while ($Zpool_Request -eq $null -and $retries -le 3)
-if ($retries -gt 3) {
+} while ($Zpool_Request -eq $null -and $retries -le 5)
+if ($retries -gt 5) {
 WRITE-HOST 'ZPOOL API NOT RESPONDING...ABORTING'
 EXIT
 }
